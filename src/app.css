@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+	@apply transition duration-200;
+
+	&:not(:defined) {
+		@apply invisible opacity-0;
+	}
+}
+
+body {
+	@apply text-white bg-neutral-950;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@apply font-manrope font-extrabold;
+}
+p,
+small {
+	@apply font-inter;
+}
+span {
+	@apply font-inherit;
+}
+
+.h1 {
+	@apply text-[60px] leading-none;
+}
+.h2 {
+	@apply text-[48px] leading-none;
+}
+.h3 {
+	@apply text-[40px] leading-snug;
+}
+.h4 {
+	@apply text-[36px] leading-snug;
+}
+.h5 {
+	@apply text-[28px] leading-normal;
+}
+.h6 {
+	@apply text-[20px] leading-normal;
+}
+.p {
+	@apply text-[16px] leading-normal;
+}
+.small {
+	@apply text-[14px] leading-normal font-medium;
+}
+
+/* BUTTONS */
+.button {
+	@apply font-body font-semibold min-w-max
+  inline-flex justify-center items-center gap-[var(--gap,8px)]
+  [padding-inline:var(--pad-x,24px)] [padding-block:var(--pad-y,8px)]
+  rounded-full outline outline-2 outline-transparent outline-offset-2
+  active:scale-95;
+}
+.button:disabled {
+	@apply opacity-50 grayscale outline-none cursor-not-allowed;
+}
+
+/* EYEBROWS */
+.eyebrow {
+	@apply font-body text-[14px] leading-none font-medium w-fit px-12 py-8
+  rounded-full flex justify-center items-center
+  pointer-events-none select-none;
+}
+
+@keyframes playMarquee {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(calc(-50% - 2em));
+	}
+}
